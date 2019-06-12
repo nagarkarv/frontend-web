@@ -1,0 +1,23 @@
+version: "3"
+services:
+  
+  # Start the frontend web container
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/app/frontend/node_modules  
+      - .:/usr/app/frontend
+  
+  # Start a seperate container to run tests (non-interactively)
+  frontend_unittests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/app/frontend/node_modules  
+      - .:/usr/app/frontend
+    command: ["npm", "run", "test"]
