@@ -5,11 +5,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t vikramnagarkar/frontend-web -f Dockerfile .
+  - docker build -t vikramnagarkar/frontend-web -f Dockerfile.dev .
 
 # -- is for npm to exit after running tests else it would just wait for our input which is default
-#script:
-#  - docker run -e CI=true vikramnagarkar/frontend-web npm run test -- --coverage
+script:
+  - docker run -e CI=true vikramnagarkar/frontend-web npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
