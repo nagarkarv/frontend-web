@@ -12,5 +12,6 @@ RUN npm run build
 # Copy the required files from builder to this new image, everything else throw away
 # new image size is quite less in size
 FROM nginx
+EXPOSE 80
 COPY --from=builder /usr/app/frontend/build /usr/share/nginx/html
 
