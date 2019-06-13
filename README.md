@@ -1,3 +1,15 @@
+## A Sample application to show
+- Docker builds
+- Multistage docker builds
+- Travis-CI
+- AWS EB deployments
+
+## Pre-requisites
+- Create an AWS EB application - frontend-web
+- Create an environment for the application (docker platform) - frontend-web-dev
+- Create a user in IAM and assign permissions to access AWS EB
+- Get the AWS_ACCESS_KEY, AWS_SECRET_KEY and set them up in travis-ci environment parameters
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
