@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t vikramnagarkar/frontend-web -f Dockerfile .
+  - docker build -t vikramnagarkar/frontend-web .
 
 # -- is for npm to exit after running tests else it would just wait for our input which is default
 #script:
