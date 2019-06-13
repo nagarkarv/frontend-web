@@ -8,3 +8,17 @@ before_install:
 # -- is for npm to exit after running tests else it would just wait for our input which is default
 script:
   - docker run -e CI=true vikramnagarkar/frontend-web npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "frontend-web"
+  env: "frontend-web-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-736493054909"
+  bucket_path: "docker"
+  on:
+    branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+      secure: "$AWS_SECRET_KEY"
+
